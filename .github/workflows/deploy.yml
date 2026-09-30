@@ -18,11 +18,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4       # checkout the repository
-      - uses: actions/configure-pages@v4        # configure GitHub Pages
+      - uses: actions/configure-pages@v5        # configure GitHub Pages
       - uses: actions/setup-node@v4     # setup node
         with:
-          node-version: '26'
-          cache: 'npm'
+          node-version: 26
+          cache: npm
       - run: npm ci                     # install dependencies
       - run: npm run build              # build the project
       - uses: actions/upload-pages-artifact@v3
@@ -37,3 +37,5 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+
